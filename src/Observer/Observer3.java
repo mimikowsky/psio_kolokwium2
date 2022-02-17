@@ -7,6 +7,7 @@ import Exception.MyException;
 public class Observer3 implements Observer{
 
     private Subject sub;
+    private String text = "";
 
     public Observer3(Subject sub) {
 
@@ -17,9 +18,10 @@ public class Observer3 implements Observer{
 
     @Override
     public void update(String row) {
-        Controller.setDataFromModel("Negatywny");
+        //Controller.setDataFromModel("Negatywny");
         System.out.println("trzeci obserwer");
-        if (row.contains("bomba") || row.contains("zamach") || row.contains("pistolet") ){
+        text = row.toLowerCase();
+        if (text.contains("bomba") || text.contains("zamach") || text.contains("pistolet") ){
             try {
                 throw new MyException();
             } catch (MyException e) {

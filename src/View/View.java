@@ -91,9 +91,10 @@ public class View {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-
+            
             String row = "";
             String sciezka = textfield1.getText();
+            textfield2.setText("Negatywny"); // by default
             try {
                 BufferedReader reader = new BufferedReader(new FileReader(sciezka));
 
